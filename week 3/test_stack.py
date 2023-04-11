@@ -20,19 +20,24 @@ def sunsetViews(buildings, direction):
     # Write your code here.
     #
     result = Stack()
-    if direction == "EAST":
-        for count, height in enumerate(buildings):
-            if len(result) > 0:
-                while len(result) > 0 and height >= buildings[result.peek()]:
-                    result.pop()
-            result.push(count)
-    else:
-        for count, height in enumerate(buildings[::-1]):
-            idx = len(buildings) - count - 1
-            if len(result) > 0:
-                while len(result) > 0 and height >= buildings[result.peek()]:
-                    result.pop()
-            result.push(idx)
+
+    high = 0
+    
+    if direction == "WEST":
+        size = 0
+        cont = 1
+    elif direction == "EAST":
+        size = len(buildings) - 1
+        cont = -1
+
+    while size >= 0 and size < len(buildings):
+        height = buildings[size]
+        
+        if height > high:
+            high = height
+            result.push(size)
+        size += cont
+    
     return sorted(list(result))
 
 @pytest.fixture(scope="session")

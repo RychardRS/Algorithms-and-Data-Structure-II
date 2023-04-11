@@ -16,10 +16,7 @@ def removeDuplicatesFromLinkedList(linkedList):
 
     while curr.next:
       if curr.data == curr.next.data:
-        curr.next = curr.next.next
-
-        if curr.next:
-          curr.next.prev = curr
+        curr.next = curr.next.next        
 
         linkedList.length -= 1
       else:

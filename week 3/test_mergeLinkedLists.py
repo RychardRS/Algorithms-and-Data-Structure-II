@@ -13,45 +13,38 @@ def mergeLinkedLists(linkedList_one, linkedList_two):
     Returns:
         LinkedList: The merged linked list, with its head updated to reflect the new head of the merged list.
     """
-    current_one = linkedList_one.head
-    current_two = linkedList_two.head
-    merged_list = LinkedList()
+    currOne = linkedList_one.head
+    currTwo = linkedList_two.head
 
-    # If either of the lists is empty, return the other one
-    if current_one is None:
-        return linkedList_two
-    if current_two is None:
-        return linkedList_one
+    mergedList = LinkedList()
 
-    # Determine which head node to use to start the merged list
-    if current_one.data < current_two.data:
-        merged_list.head = current_one
-        current_one = current_one.next
+    if currOne.data > currTwo.data:
+        mergedList.head = currTwo
+        currTwo = currTwo.next
     else:
-        merged_list.head = current_two
-        current_two = current_two.next
-    current_merged = merged_list.head
+        mergedList.head = currOne
+        currOne = currOne.next
 
-    # Traverse both lists and merge the nodes in ascending order
-    while current_one is not None and current_two is not None:
-        if current_one.data < current_two.data:
-            current_merged.next = current_one
-            current_one = current_one.next
+    currMerged = mergedList.head
+
+    while currOne and currTwo != None:
+        if currOne.data > currTwo.data:
+            currMerged.next = currTwo
+            currTwo = currTwo.next
         else:
-            current_merged.next = current_two
-            current_two = current_two.next
-        current_merged = current_merged.next
+            currMerged.next = currOne
+            currOne = currOne.next
 
-    # Add any remaining nodes to the end of the merged list
-    if current_one is not None:
-        current_merged.next = current_one
-    elif current_two is not None:
-        current_merged.next = current_two
+        currMerged = currMerged.next
+
+    if currOne != None:
+        currMerged.next = currOne
+    elif currTwo != None:
+        currMerged.next = currTwo
     
-    # Update the length of the merged list
-    merged_list.length = linkedList_one.length + linkedList_two.length
+    mergedList.length = linkedList_one.length + linkedList_two.length
 
-    return merged_list
+    return mergedList
 
 
 @pytest.fixture(scope="session")
