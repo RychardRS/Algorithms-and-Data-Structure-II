@@ -13,21 +13,45 @@ def mergeLinkedLists(linkedList_one, linkedList_two):
     Returns:
         LinkedList: The merged linked list, with its head updated to reflect the new head of the merged list.
     """
-    if not linkedList_one:
+    current_one = linkedList_one.head
+    current_two = linkedList_two.head
+    merged_list = LinkedList()
+
+    # If either of the lists is empty, return the other one
+    if current_one is None:
         return linkedList_two
-    if not head2:
+    if current_two is None:
         return linkedList_one
 
-    if linkedList_one.val < linkedList_two.val:
-        linkedList_one.next = merge_lists(linkedList_one.next, linkedList_two)
-        linkedList_one.next.prev = linkedList_one
-        linkedList_one.prev = None
-        return linkedList_one
+    # Determine which head node to use to start the merged list
+    if current_one.data < current_two.data:
+        merged_list.head = current_one
+        current_one = current_one.next
     else:
-        linkedList_two.next = merge_lists(linkedList_one, linkedList_two.next)
-        linkedList_two.next.prev = linkedList_two
-        linkedList_two.prev = None
-        return linkedList_two
+        merged_list.head = current_two
+        current_two = current_two.next
+    current_merged = merged_list.head
+
+    # Traverse both lists and merge the nodes in ascending order
+    while current_one is not None and current_two is not None:
+        if current_one.data < current_two.data:
+            current_merged.next = current_one
+            current_one = current_one.next
+        else:
+            current_merged.next = current_two
+            current_two = current_two.next
+        current_merged = current_merged.next
+
+    # Add any remaining nodes to the end of the merged list
+    if current_one is not None:
+        current_merged.next = current_one
+    elif current_two is not None:
+        current_merged.next = current_two
+    
+    # Update the length of the merged list
+    merged_list.length = linkedList_one.length + linkedList_two.length
+
+    return merged_list
 
 
 @pytest.fixture(scope="session")
