@@ -1,3 +1,3 @@
 REALIZAÇÃO DA ATIVIDADE DA SEMANA 3
 
-- Link do vídeo no loom: https://www.loom.com/share/68f9b2cf4ff846a3a2aa9bf5371b320e
+- Link do vídeo no loom: https://www.loom.com/share/9de6efc400f04a749f85479000be1bd0
