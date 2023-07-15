@@ -28,9 +28,7 @@ import matplotlib.pyplot as plt
 
 ## Início da Coleta de Dados ##
 
-#Titulo
 SEED = "Extremoz".title()
-#Palavras que remetem a nós folha
 STOPS = ("Isni (Identifier)",
          "International Standard Name Identifier",
          "Viaf (Identifier)",
@@ -51,9 +49,6 @@ layer, page = todo_lst[0]
   
 %%time
 while layer < 2:
-  # Remove the name page of the current page from the todo_lst,
-  # and add it to the set of processed pages.
-  # If the script encounters this page again, it will skip over it.
   del todo_lst[0]
   done_set.add(page)
 
