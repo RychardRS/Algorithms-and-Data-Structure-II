@@ -10,6 +10,7 @@ Grupo:
 
 ## Inicialmente começamos instalando importando as bibliotecas ##
 
+
 !pip install nxviz==0.6.3
 !pip install networkx==2.6.2
 !pip install wikipedia
