@@ -1,0 +1,1 @@
+- Link do vídeo no Loom da semana 11-12: https://www.loom.com/share/7f8f8de647bd469c99faa86ed05d75e9
