@@ -7,6 +7,8 @@ Grupo:
 - Thiago Jordão Melo da Costa
 
 - Link do vídeo no Loom da semana 11-12: https://www.loom.com/share/e2310a7e8cb343c7b98af6185cbd6bc8
+- Link do vídeo do Loom da semana 13: https://www.loom.com/share/b7d1db15c27d4786bd0a2cdb825c34ce
+- Link do grafo feito no gephi: https://thiagojordao98.github.io/gephi-netdeploy/network/
 
 # 1. Inicialmente começamos instalando e importando as bibliotecas #
 
@@ -46,6 +48,7 @@ Nessa etapa, produzimos os resultados, como:
 - Histogramas
 - Gráfico de densidade de probabilidade
 - Gráfico de densidade cumulativa
+- Gráfico da rede obtida a partir do Gephi
 
 # 5. Referência #
 - Os resultados podem ser vistos em:
