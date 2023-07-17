@@ -8,7 +8,7 @@ Grupo:
 
 - Link do vídeo no Loom da semana 11-12: https://www.loom.com/share/e2310a7e8cb343c7b98af6185cbd6bc8
 
-# 1. Inicialmente começamos instalando importando as bibliotecas #
+# 1. Inicialmente começamos instalando e importando as bibliotecas #
 
 - !pip install nxviz==0.6.3
 - !pip install networkx==2.6.2
